@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Header() {
+function Header({ cartItemCount, cartItems, onRemoveFromCart }) {
   const [openedDrawer, setOpenedDrawer] = useState(false);
 
   function toggleDrawer() {
@@ -32,10 +32,11 @@ function Header() {
                 </Link>
               </li>
             </ul>
-            <button type="button" className="btn btn-outline-dark me-3 d-none d-lg-inline">
+
+            <Link to="/cart" className="btn btn-outline-dark">
               <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-              <span className="ms-3 badge rounded-pill bg-dark">0</span>
-            </button>
+              <span className="ms-3 badge rounded-pill bg-dark">{cartItemCount}</span>
+            </Link>
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item dropdown">
                 <a

@@ -1,14 +1,34 @@
-import Image from "../../../assets/nillkin-case-1.jpg";
+// ProductDetail.js
+import React, { useState } from "react";
 import RelatedProduct from "./RelatedProduct";
-import Ratings from "react-ratings-declarative";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
+import Ratings from "react-ratings-declarative";
+import productData from "../detail/ProductData"; //
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const iconPath =
   "M18.571 7.221c0 0.201-0.145 0.391-0.29 0.536l-4.051 3.951 0.96 5.58c0.011 0.078 0.011 0.145 0.011 0.223 0 0.29-0.134 0.558-0.458 0.558-0.156 0-0.313-0.056-0.446-0.134l-5.011-2.634-5.011 2.634c-0.145 0.078-0.29 0.134-0.446 0.134-0.324 0-0.469-0.268-0.469-0.558 0-0.078 0.011-0.145 0.022-0.223l0.96-5.58-4.063-3.951c-0.134-0.145-0.279-0.335-0.279-0.536 0-0.335 0.346-0.469 0.625-0.513l5.603-0.815 2.511-5.078c0.1-0.212 0.29-0.458 0.547-0.458s0.446 0.246 0.547 0.458l2.511 5.078 5.603 0.815c0.268 0.045 0.625 0.179 0.625 0.513z";
 
-function ProductDetail() {
-  function changeRating(newRating) {}
+function getRandomRelatedProducts(allProducts, currentProductId, numProducts) {
+  const shuffledProducts = allProducts.sort(() => 0.5 - Math.random());
+  const selectedProducts = shuffledProducts.slice(0, numProducts);
+  return selectedProducts.filter(product => product.id !== currentProductId);
+}
+
+function ProductDetail({ addToCart }) {
+  const { id } = useParams();
+  const product = productData.find(p => p.id === parseInt(id));
+
+  const [currentImage, setCurrentImage] = useState(product.images[0].url);
+
+  if (!product) {
+    return <div>Prodotto non trovato</div>;
+  }
+
+  function changeRating(newRating) {
+    console.log(`Nuova valutazione: ${newRating}`);
+  }
 
   return (
     <div className="container mt-5 py-4 px-xl-5">
@@ -16,17 +36,17 @@ function ProductDetail() {
       <nav aria-label="breadcrumb" className="bg-custom-light rounded mb-4">
         <ol className="breadcrumb p-3">
           <li className="breadcrumb-item">
-            <Link className="text-decoration-none link-secondary" to="/products">
-              All Prodcuts
+            <Link className="text-decoration-none text-dark link-secondary" to="/products">
+              All Products
             </Link>
           </li>
           <li className="breadcrumb-item">
-            <a className="text-decoration-none link-secondary" href="!#">
-              Cases &amp; Covers
+            <a className="text-decoration-none  text-darklink-secondary" href="!#">
+              {product.details.category}
             </a>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
-            Nillkin iPhone X cover
+            {product.title}
           </li>
         </ol>
       </nav>
@@ -34,87 +54,88 @@ function ProductDetail() {
         <div className="d-none d-lg-block col-lg-1">
           <div className="image-vertical-scroller">
             <div className="d-flex flex-column">
-              {Array.from({ length: 10 }, (_, i) => {
-                let selected = i !== 1 ? "opacity-6" : "";
-                return (
-                  <a key={i} href="!#">
-                    <img className={"rounded mb-2 ratio " + selected} alt="" src={Image} />
-                  </a>
-                );
-              })}
+              {Array.from({ length: 1 }, (_, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    setCurrentImage(product.images[0].url);
+                  }}
+                  className={i === 0 ? "opacity-6" : ""}
+                >
+                  <img className="border rounded ratio ratio-1x1" alt="" src={product.images[0].url} />
+                </a>
+              ))}
+              {product.images2 && (
+                <a
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    setCurrentImage(product.images2[0].url);
+                  }}
+                  className={product.images2[0].url === currentImage ? "opacity-6" : ""}
+                >
+                  <img className="border rounded ratio ratio-1x1" alt="" src={product.images2[0].url} />
+                </a>
+              )}
+              {product.images3 && (
+                <a
+                  href="#"
+                  onClick={e => {
+                    e.preventDefault();
+                    setCurrentImage(product.images3[0].url);
+                  }}
+                  className={product.images3[0].url === currentImage ? "opacity-6" : ""}
+                >
+                  <img className="border rounded ratio ratio-1x1" alt="" src={product.images3[0].url} />
+                </a>
+              )}
             </div>
           </div>
         </div>
         <div className="col-lg-6">
           <div className="row">
             <div className="col-12 mb-4">
-              <img className="border rounded ratio ratio-1x1" alt="" src={Image} />
+              <img className="border rounded ratio ratio-1x1" alt="" src={currentImage} />
             </div>
           </div>
-
-          {/* <div className="row mt-2">
-            <div className="col-12">
-              <div
-                className="d-flex flex-nowrap"
-                style={{ overflowX: "scroll" }}
-              >
-                {Array.from({ length: 8 }, (_, i) => {
-                  return (
-                    <a key={i} href="!#">
-                      <img
-                        className="cover rounded mb-2 me-2"
-                        width="70"
-                        height="70"
-                        alt=""
-                        src={Image}
-                      />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div> */}
         </div>
-
         <div className="col-lg-5">
           <div className="d-flex flex-column h-100">
-            <h2 className="mb-1">Nillkin iPhone X cover</h2>
-            <h4 className="text-muted mb-4">10000 Ks</h4>
-
+            <h2 className="mb-1">{product.title}</h2>
+            <h4 className="text-muted mb-4">{`€${product.price}`}</h4>
             <div className="row g-3 mb-4">
               <div className="col">
-                <button className="btn btn-outline-dark py-2 w-100">Add to cart</button>
+                <button className="btn btn-outline-dark py-2 w-100" onClick={() => addToCart(product)}>
+                  Add to cart
+                </button>
               </div>
               <div className="col">
                 <button className="btn btn-dark py-2 w-100">Buy now</button>
               </div>
             </div>
-
             <h4 className="mb-0">Details</h4>
             <hr />
             <dl className="row">
               <dt className="col-sm-4">Code</dt>
-              <dd className="col-sm-8 mb-3">C0001</dd>
-
+              <dd className="col-sm-8 mb-3">{product.details.code}</dd>
               <dt className="col-sm-4">Category</dt>
-              <dd className="col-sm-8 mb-3">Cases & Covers</dd>
-
+              <dd className="col-sm-8 mb-3">{product.details.category}</dd>
               <dt className="col-sm-4">Brand</dt>
-              <dd className="col-sm-8 mb-3">iPhone X</dd>
-
+              <dd className="col-sm-8 mb-3">{product.details.brand}</dd>
               <dt className="col-sm-4">Manufacturer</dt>
-              <dd className="col-sm-8 mb-3">Nillkin</dd>
-
+              <dd className="col-sm-8 mb-3">{product.details.manufacturer}</dd>
               <dt className="col-sm-4">Color</dt>
-              <dd className="col-sm-8 mb-3">Red, Green, Blue, Pink</dd>
-
+              <dd className="col-sm-8 mb-3">
+                {Array.isArray(product.details.color) ? product.details.color.join(", ") : product.details.color}
+              </dd>
               <dt className="col-sm-4">Status</dt>
-              <dd className="col-sm-8 mb-3">Instock</dd>
-
+              <dd className="col-sm-8 mb-3">{product.details.status}</dd>
               <dt className="col-sm-4">Rating</dt>
               <dd className="col-sm-8 mb-3">
                 <Ratings
-                  rating={4.5}
+                  rating={product.details.rating}
                   widgetRatedColors="rgb(253, 204, 13)"
                   changeRating={changeRating}
                   widgetSpacings="2px"
@@ -133,30 +154,22 @@ function ProductDetail() {
                 </Ratings>
               </dd>
             </dl>
-
             <h4 className="mb-0">Description</h4>
             <hr />
             <p className="lead flex-shrink-0">
-              <small>
-                Nature (TPU case) use environmental non-toxic TPU, silky smooth and ultrathin. Glittering and
-                translucent, arbitrary rue reserved volume button cutouts, easy to operate. Side frosted texture
-                anti-slipping, details show its concern; transparent frosted logo shows its taste. The release of self,
-                the flavor of life. Nillkin launched Nature transparent soft cover, only to retain the original phone
-                style. Subverting tradition, redefinition. Thinner design Environmental texture better hand feeling.
-              </small>
+              <small>{product.details.description}</small>
             </p>
           </div>
         </div>
       </div>
-
       <div className="row">
         <div className="col-md-12 mb-4">
           <hr />
           <h4 className="text-muted my-4">Related products</h4>
           <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3">
-            {Array.from({ length: 4 }, (_, i) => {
-              return <RelatedProduct key={i} percentOff={i % 2 === 0 ? 15 : null} />;
-            })}
+            {getRandomRelatedProducts(productData, product.id, 4).map((relatedProduct, index) => (
+              <RelatedProduct key={index} product={relatedProduct} percentOff={index % 2 === 0 ? 15 : null} />
+            ))}
           </div>
         </div>
       </div>
