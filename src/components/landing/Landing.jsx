@@ -14,8 +14,8 @@ function Landing() {
       <div className="d-flex flex-column bg-white py-4">
         <p className="text-center px-5">
           Benvenuto nel Mondo della Tecnologia Mobile! Presso PhoneHub, ci impegniamo a offrirti il meglio della
-          tecnologia mobile. <br /> Scopri la nostra selezione eclettica di smartphone che uniscono stile, innovazione e
-          prestazioni all'avanguardia.
+          tecnologia . <br /> Scopri la nostra selezione eclettica di smartphone , Laptop , Tablet e altro ancora ,che
+          uniscono stile, innovazione e prestazioni all'avanguardia.
         </p>
         <div className="d-flex justify-content-center">
           <Link to="/products" className="btn btn-primary" replace>
