@@ -410,7 +410,7 @@ const productData = [
 
   {
     id: 14,
-    title: "Xiaomi Mi 11 256GB - Gray - Dual SIM",
+    title: "Xiaomi Mi 11 256GB - Blue & Yellow - Dual SIM",
     price: 849,
     images: [
       {
@@ -432,16 +432,17 @@ const productData = [
       category: "Smartphones",
       brand: "Xiaomi",
       manufacturer: "Xiaomi Corporation",
-      color: "Gray",
+      color: " Blue & Yellow ",
       status: "In Stock",
       rating: 4.4,
-      description: "",
+      description:
+        "Il Xiaomi Mi 11 è uno smartphone Android della serie Mi di Xiaomi, noto per combinare specifiche hardware di alto livello con un design elegante. Il Xiaomi Mi 11 presenta un design raffinato e moderno, con un corpo sottile e materiali di alta qualità. Lo schermo, di solito di ampie dimensioni e con tecnologia AMOLED, offre colori vivaci, contrasto elevato e una risoluzione nitida.Dal punto di vista delle prestazioni, il Mi 11 è spinto da un processore di fascia alta, abbinato a una generosa quantità di RAM, garantendo una risposta fluida e veloce alle attività quotidiane e all'esecuzione di applicazioni più esigenti. La fotocamera, un punto di forza dei dispositivi Xiaomi, di solito offre capacità fotografiche avanzate.",
     },
   },
 
   {
     id: 15,
-    title: "Huawei P40 128GB - Gold - Single SIM",
+    title: "Huawei P40 128GB - Dark Blue - Single SIM",
     price: 749,
     images: [
       {
@@ -463,10 +464,11 @@ const productData = [
       category: "Smartphones",
       brand: "Huawei",
       manufacturer: "Huawei Technologies",
-      color: "Gold",
+      color: " Dark Blue",
       status: "In Stock",
       rating: 4.3,
-      description: "Huawei P40 with 128GB storage, Gold color, single SIM support, and cutting-edge camera technology.",
+      description:
+        " Il Huawei P40 è uno smartphone elegante e potente con uno schermo OLED vivace, un processore performante e una fotocamera avanzata. Con il sistema operativo EMUI basato su Android, offre un'esperienza utente personalizzabile. La batteria capiente e la ricarica rapida completano le caratteristiche di questo dispositivo di fascia alta.",
     },
   },
 ];

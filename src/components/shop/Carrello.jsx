@@ -8,7 +8,7 @@ function Carrello({ items, onRemove }) {
   };
 
   return (
-    <div className="p-3 mt-5">
+    <div className="p-3 " style={{ marginTop: 150 }}>
       <h5 className="mb-3">Il tuo carrello</h5>
       {items && items.length > 0 ? (
         items.map(item => <CartItem key={item.id} product={item} onRemove={onRemove} />)
