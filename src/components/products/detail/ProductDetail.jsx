@@ -41,7 +41,7 @@ function ProductDetail({ addToCart }) {
             </Link>
           </li>
           <li className="breadcrumb-item">
-            <a className="text-decoration-none  text-darklink-secondary" href="!#">
+            <a className="text-decoration-none  text-dark link-secondary" href="!#">
               {product.details.category}
             </a>
           </li>
