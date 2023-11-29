@@ -1,4 +1,6 @@
-	1.	🚀 Benvenuto su tecHub
+	#Techub 
+
+1.	🚀 Benvenuto su tecHub
 	•	La tua destinazione di eccellenza per l’acquisto di tecnologia avanzata.
 	2.	💻 Computer | 📱 Smartphone | 📱 Tablet | 📺 TV
 	•	Esplora il nostro vasto catalogo che abbraccia ogni aspetto della tecnologia moderna.
