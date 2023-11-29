@@ -25,9 +25,10 @@ const productData = [
       brand: "Apple",
       manufacturer: "Foxconn",
       color: "Viola",
-      status: "In Stock",
+      status: "Available",
       rating: 4.7,
-      description: "The latest iPhone with advanced features, A15 Bionic chip, Pro camera system, and stunning design.",
+      description:
+        "L'iPhone 15 viola è uno splendido concentrato di eleganza e potenza. Il suo design sottile e leggero si veste di un vivace colore viola, donando al dispositivo un tocco di originalità e raffinatezza. Dotato di un display ad alta risoluzione e colori vibranti, offre un'esperienza visiva straordinaria. Le prestazioni avanzate, unite a una fotocamera di qualità eccezionale, rendono questo iPhone un compagno ideale per catturare momenti indimenticabili. Con connettività di ultima generazione e caratteristiche di sicurezza avanzate, l'iPhone 15 viola è tanto uno strumento potente quanto un accessorio di stile.",
     },
   },
 
@@ -55,12 +56,12 @@ const productData = [
       code: "C0002",
       category: "Cables & Chargers",
       brand: "SuperCharge",
-      manufacturer: "TechPower",
+      manufacturer: "Goal Zero",
       color: "Black",
       status: "In Stock",
       rating: 4.2,
       description:
-        "High-capacity power bank with SuperCharge technology, providing fast and efficient charging on the go.",
+        "Il power bank nero è un compagno affidabile per chiunque sia sempre in movimento. Con il suo design elegante e minimalista, si presenta in un colore nero profondo che si abbina con versatilità a qualsiasi stile. La sua superficie opaca offre un tocco di modernità e si adatta discretamente a qualsiasi ambiente",
     },
   },
   {
@@ -87,11 +88,11 @@ const productData = [
       category: "Cases & Covers",
       brand: "Nillkin",
       manufacturer: "Nillkin",
-      color: "Red, Green, Blue, Pink",
-      status: "In Stock",
+      color: "White,Emoticon,Writing ",
+      status: "Available",
       rating: 4.5,
       description:
-        "Nature (TPU case) use environmental non-toxic TPU, silky smooth and ultrathin. Glittering and translucent, arbitrary rue reserved volume button cutouts, easy to operate. Side frosted texture anti-slipping, details show its concern; transparent frosted logo shows its taste. The release of self, the flavor of life. Nillkin launched Nature transparent soft cover, only to retain the original phone style. Subverting tradition, redefinition. Thinner design Environmental texture better hand feeling.",
+        "Le cover proposte sono un'esplosione di stile e funzionalità, progettate per proteggere e personalizzare il tuo dispositivo con un tocco di originalità. Disponibili in diverse varianti, queste cover offrono una vasta gamma di opzioni per soddisfare ogni stile e preferenza.",
     },
   },
   {
@@ -118,10 +119,11 @@ const productData = [
       category: "Laptops",
       brand: "Apple",
       manufacturer: "Foxconn",
-      color: "Space Gray",
-      status: "In Stock",
+      color: "Midnight",
+      status: "Available",
       rating: 4.8,
-      description: "The sleek and powerful MacBook Air with M2 chip, Retina display, and all-day battery life.",
+      description:
+        "Il MacBook Air Mezzanotte è un'elegante interpretazione della rinomata serie di laptop di Apple. Il suo design raffinato si distingue per il colore Mezzanotte, una tonalità scura che conferisce al dispositivo un aspetto sofisticato e moderno. Leggero e sottile, il MacBook Air Mezzanotte offre una portabilità senza sforzi, rendendolo l'ideale compagno per chi è sempre in movimento.Il display ad alta risoluzione offre immagini nitide e dettagliate",
     },
   },
   {
@@ -149,10 +151,10 @@ const productData = [
       brand: "Apple",
       manufacturer: "Quanta Computer",
       color: "Silver",
-      status: "In Stock",
+      status: "No available",
       rating: 4.6,
       description:
-        "The Apple Watch SE with GPS, fitness tracking, heart rate monitoring, and a variety of watch faces.",
+        "L'Apple Watch SE Silver è una fusione di eleganza e tecnologia. Il suo design raffinato si presenta in un elegante colore silver, aggiungendo un tocco di stile a qualsiasi polso.Il display luminoso e nitido consente di accedere rapidamente alle informazioni più importanti, mentre la resistenza all'acqua lo rende adatto a qualsiasi attività. ",
     },
   },
   {
@@ -180,9 +182,10 @@ const productData = [
       brand: "Apple",
       manufacturer: "Foxconn",
       color: "Space Gray",
-      status: "In Stock",
+      status: "NO available",
       rating: 4.9,
-      description: "The powerful iPad Pro 12.9 with M2 chip, Liquid Retina XDR display, and advanced camera system.",
+      description:
+        "L'iPad Pro 12.9 è una potente tavola grafica digitale, unisce un display straordinario alle prestazioni di alto livello, offrendo un'esperienza utente senza precedenti. Il suo schermo Liquid Retina da 12.9 pollici, con una risoluzione elevata e una tecnologia ProMotion per un refresh rate fluido, cattura l'attenzione con colori vividi e dettagli cristallini.La fotocamera avanzata e le capacità di registrazione video 4K consentono di catturare immagini e filmati straordinari, mentre la potente batteria offre una lunga autonomia,",
     },
   },
   {
@@ -210,10 +213,10 @@ const productData = [
       brand: "Apple",
       manufacturer: "Inventec",
       color: "White",
-      status: "In Stock",
+      status: "Available",
       rating: 4.4,
       description:
-        "The second-generation Apple Airpods with wireless charging case, seamless connectivity, and Siri integration.",
+        "Gli Apple AirPods 2 sono auricolari senza fili che portano l'esperienza audio a un livello superiore con la firma di design e l'innovazione tipiche di Apple. Compatibili con dispositivi iOS, questi auricolari offrono un'apparizione pulita e minimalista, completata dalla loro caratteristica custodia di ricarica wireless.La qualità audio degli AirPods 2 è sorprendente, con un suono chiaro e bilanciato",
     },
   },
   {
@@ -243,7 +246,8 @@ const productData = [
       color: "Black",
       status: "In Stock",
       rating: 4.7,
-      description: "LG OLED TV with evo technology, 83-inch 4K display, α9 Gen6 processor, and Dolby Vision support.",
+      description:
+        "La LG OLED Evo TV rappresenta l'apice della tecnologia OLED di LG, offrendo un'esperienza visiva straordinaria. Il termine Evo sottolinea l'evoluzione delle prestazioni e della luminosità rispetto ai modelli precedenti. Questa TV si distingue per la sua eccezionale qualità dell'immagine, grazie alla tecnologia OLED che offre neri profondi, contrasto infinito e colori vividi.La LG OLED Evo TV rappresenta l'apice della tecnologia OLED di LG, offrendo un'esperienza visiva straordinaria.",
     },
   },
   {
@@ -271,10 +275,10 @@ const productData = [
       brand: "Samsung",
       manufacturer: "Samsung Electronics",
       color: "Blue",
-      status: "In Stock",
+      status: "No avaible",
       rating: 4.5,
       description:
-        "Samsung Galaxy Z Fold 5 with 512GB storage, Mystic Blue color, dual eSIM support, and innovative folding display.",
+        "Il Galaxy Z Fold 5 rappresenta probabilmente l'evoluzione della linea di smartphone pieghevoli di Samsung. Caratterizzato da uno schermo flessibile pieghevole, questo dispositivo offre una doppia esperienza, fungendo sia da smartphone tradizionale quando è chiuso, sia da tablet quando è aperto,. La serie Galaxy Z Fold solitamente include funzionalità di alta gamma, fotocamere avanzate e un design robusto per sopportare l'uso quotidiano.",
     },
   },
   {
@@ -301,10 +305,11 @@ const productData = [
       category: "Smartphones",
       brand: "Apple",
       manufacturer: "Apple Inc.",
-      color: "Silver",
+      color: "Blue",
       status: "In Stock",
       rating: 4.8,
-      description: "iPhone 15 Pro with 256GB storage, Blue color, dual SIM support, and advanced camera features.",
+      description:
+        "L'iPhone 15 Pro rappresenterebbe probabilmente un'evoluzione della serie di smartphone di punta di Apple. Solitamente, i modelli Pro offrono caratteristiche avanzate come fotocamere di alta qualità, prestazioni di alto livello, schermi di qualità superiore e una gamma di funzionalità avanzate",
     },
   },
   {
@@ -335,7 +340,7 @@ const productData = [
       status: "In Stock",
       rating: 4.6,
       description:
-        "Samsung Galaxy S23 with 128GB storage, Black color, single SIM support, and high-performance features.",
+        "Il Galaxy S23 rappresenterebbe probabilmente l'evoluzione della serie di smartphone Galaxy S, che è la linea di punta di Samsung. Solitamente, i modelli della serie Galaxy S offrono schermi di alta qualità, potenti prestazioni, fotocamere avanzate e una serie di funzionalità intelligenti.",
     },
   },
 
@@ -364,10 +369,10 @@ const productData = [
       brand: "Google",
       manufacturer: "Google LLC",
       color: "White",
-      status: "In Stock",
+      status: "Available",
       rating: 4.7,
       description:
-        "Google Pixel 6 with 256GB storage, White color, dual SIM support, and exceptional camera capabilities.",
+        "Il Google Pixel 6 rappresenterebbe probabilmente la successiva evoluzione nella serie di smartphone Pixel, che è conosciuta per offrire un'esperienza Android pura e un'eccellente qualità fotografica. Gli smartphone Pixel di solito vantano una fotocamera posteriore potente, caratterizzata dall'uso di software avanzato per migliorare la qualità delle immagini.",
     },
   },
 
@@ -396,10 +401,10 @@ const productData = [
       brand: "OnePlus",
       manufacturer: "OnePlus Technology",
       color: "Blue",
-      status: "In Stock",
+      status: "No available",
       rating: 4.5,
       description:
-        "OnePlus 9 with 128GB storage, Blue color, dual SIM support, and powerful performance for enthusiasts.",
+        "Il OnePlus 9 è uno smartphone Android che fa parte della linea di dispositivi OnePlus, nota per offrire prestazioni di alto livello a un prezzo relativamente accessibile .Dal punto di vista delle prestazioni, il OnePlus 9 è alimentato da un processore potente e accompagnato da una quantità generosa di RAM, garantendo un'esperienza utente veloce e fluida. La piattaforma OxygenOS di OnePlus, basata su Android, offre un'esperienza Android pulita e personalizzabile.La fotocamera è spesso un punto forte nei dispositivi OnePlus",
     },
   },
 
@@ -430,8 +435,7 @@ const productData = [
       color: "Gray",
       status: "In Stock",
       rating: 4.4,
-      description:
-        "Xiaomi Mi 11 with 256GB storage, Gray color, dual SIM support, and sleek design for a premium feel.",
+      description: "",
     },
   },
 

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../../assets/logo.png";
 
 function Header({ cartItemCount, cartItems, onRemoveFromCart }) {
   const [openedDrawer, setOpenedDrawer] = useState(false);
@@ -20,15 +21,15 @@ function Header({ cartItemCount, cartItems, onRemoveFromCart }) {
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-white border-bottom">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/" onClick={changeNav}>
-            <FontAwesomeIcon icon={["fab", "bootstrap"]} className="ms-1" size="lg" />
-            <span className="ms-2 h5">PhoneHub</span>
+            <img src={logo} alt="" style={{ width: 120, height: 90 }} />
+            <span className="ms-2 h5">Techub</span>
           </Link>
 
           <div className={"navbar-collapse offcanvas-collapse " + (openedDrawer ? "open" : "")}>
             <ul className="navbar-nav me-auto mb-lg-0">
               <li className="nav-item">
                 <Link to="/products" className="nav-link" replace onClick={changeNav}>
-                  Esplora nel nostro negozio
+                  Products
                 </Link>
               </li>
             </ul>

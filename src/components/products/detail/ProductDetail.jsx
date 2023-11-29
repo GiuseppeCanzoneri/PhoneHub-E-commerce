@@ -1,10 +1,11 @@
-// ProductDetail.js
+// Importa Alert da react-bootstrap
+import Alert from "react-bootstrap/Alert";
 import React, { useState } from "react";
 import RelatedProduct from "./RelatedProduct";
 import { useParams } from "react-router-dom";
 import ScrollToTopOnMount from "../../template/ScrollToTopOnMount";
 import Ratings from "react-ratings-declarative";
-import productData from "../detail/ProductData"; //
+import productData from "../detail/ProductData";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const iconPath =
@@ -21,6 +22,7 @@ function ProductDetail({ addToCart }) {
   const product = productData.find(p => p.id === parseInt(id));
 
   const [currentImage, setCurrentImage] = useState(product.images[0].url);
+  const [showAlert, setShowAlert] = useState(false);
 
   if (!product) {
     return <div>Prodotto non trovato</div>;
@@ -107,7 +109,13 @@ function ProductDetail({ addToCart }) {
             <h4 className="text-muted mb-4">{`€${product.price}`}</h4>
             <div className="row g-3 mb-4">
               <div className="col">
-                <button className="btn btn-outline-dark py-2 w-100" onClick={() => addToCart(product)}>
+                <button
+                  className="btn btn-outline-dark py-2 w-100"
+                  onClick={() => {
+                    addToCart(product);
+                    setShowAlert(true);
+                  }}
+                >
                   Add to cart
                 </button>
               </div>
@@ -115,6 +123,9 @@ function ProductDetail({ addToCart }) {
                 <button className="btn btn-dark py-2 w-100">Buy now</button>
               </div>
             </div>
+            <Alert show={showAlert} variant="success" onClose={() => setShowAlert(false)} dismissible>
+              Prodotto aggiunto al carrello!
+            </Alert>
             <h4 className="mb-0">Details</h4>
             <hr />
             <dl className="row">
